@@ -1,3 +1,21 @@
+GET http://localhost:8080/products
+
+<> 2019-08-20T115650.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{"price": 12.56,
+  "name": "ball",
+  "description": "very nice"
+}
+
+<> 2019-08-20T115644.200.json
+
+###
+
 POST http://localhost:8080/products/new
 Content-Type: application/json
 

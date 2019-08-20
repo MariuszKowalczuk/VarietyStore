@@ -6,6 +6,9 @@ import pl.mk.variety_store.dto.ProductDto;
 import pl.mk.variety_store.model.entity.Product;
 import pl.mk.variety_store.repository.ProductRepository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author Mariusz Kowalczuk
  */
@@ -22,5 +25,9 @@ public class ProductService {
         return product;
 
 
+    }
+
+    public List<ProductDto> findAll() {
+        return productRepository.findAll().stream().map(Product::toDto).collect(Collectors.toList());
     }
 }

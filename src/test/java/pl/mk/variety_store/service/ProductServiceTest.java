@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 /**
@@ -45,7 +44,21 @@ public class ProductServiceTest {
         assertNull(product1.getDescription());
         verify(productRepository).save(any(Product.class));
 
+    }
 
+    @Test
+    public void findAllShouldListAllProducts() {
+        Product product = new Product();
+        product.setName("ball");
+        Product product1 = new Product();
+        product1.setName("glasses");
+        List<ProductDto> productDtos = new ArrayList<>();
+        productDtos.add(product.toDto());
+        productDtos.add(product1.toDto());
+        when(productRepository.findAll()).thenReturn(productDtos.stream().map(ProductDto::toEntity).collect(Collectors.toList()));
+        assertEquals(2, productService.findAll().size());
+        assertNotEquals(3, productService.findAll().size());
+        verify(productRepository, times(2)).findAll();
     }
 
 }
