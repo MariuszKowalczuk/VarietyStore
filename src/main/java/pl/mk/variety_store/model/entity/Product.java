@@ -25,6 +25,7 @@ public class Product {
     private String name;
     private String description;
 
+
     @OneToMany(mappedBy = "product")
     private Set<OrderItem> orderItems;
 
