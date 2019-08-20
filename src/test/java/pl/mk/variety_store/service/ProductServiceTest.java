@@ -61,4 +61,23 @@ public class ProductServiceTest {
         verify(productRepository, times(2)).findAll();
     }
 
+    @Test
+    public void findByIdShouldFindProductWithSpecifiedId() {
+        Product product = new Product();
+        product.setName("ball");
+        product.setId(1L);
+        Product product1 = new Product();
+        product1.setName("glasses");
+        product1.setId(2L);
+        List<ProductDto> productDtos = new ArrayList<>();
+        productDtos.add(product.toDto());
+        productDtos.add(product1.toDto());
+        when(productRepository.findById(1L)).thenReturn(productDtos.stream().filter(productDto -> productDto.getId().equals(1L)).map(ProductDto::toEntity).findFirst());
+        when(productRepository.findById(2L)).thenReturn(productDtos.stream().filter(productDto -> productDto.getId().equals(2L)).map(ProductDto::toEntity).findFirst());
+        assertEquals("ball", productService.findById("1").getName());
+        assertEquals("glasses", productService.findById("2").getName());
+        verify(productRepository, times(2)).findById(any(Long.class));
+
+    }
+
 }

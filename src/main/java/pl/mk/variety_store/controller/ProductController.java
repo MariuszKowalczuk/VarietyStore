@@ -30,4 +30,11 @@ public class ProductController {
         return productService.findAll();
 
     }
+
+    @RequestMapping("products/{id}")
+    @GetMapping
+    public ProductDto findProductById(@PathVariable String id) {
+        return productService.findById(id);
+
+    }
 }

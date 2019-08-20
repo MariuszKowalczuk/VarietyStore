@@ -1,6 +1,7 @@
 package pl.mk.variety_store.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import pl.mk.variety_store.dto.ProductDto;
 import pl.mk.variety_store.model.entity.Product;
@@ -29,5 +30,9 @@ public class ProductService {
 
     public List<ProductDto> findAll() {
         return productRepository.findAll().stream().map(Product::toDto).collect(Collectors.toList());
+    }
+
+    public ProductDto findById(String id) {
+        return productRepository.findById(Long.valueOf(id)).orElseThrow(ResourceNotFoundException::new).toDto();
     }
 }
