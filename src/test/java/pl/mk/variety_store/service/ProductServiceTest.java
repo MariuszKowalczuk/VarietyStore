@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import pl.mk.variety_store.dto.ProductDto;
 import pl.mk.variety_store.model.entity.Product;
 import pl.mk.variety_store.repository.ProductRepository;
@@ -60,5 +61,45 @@ public class ProductServiceTest {
         assertNotEquals(3, productService.findAll().size());
         verify(productRepository, times(2)).findAll();
     }
+
+    @Test(expected = ResourceNotFoundException.class)
+    public void findByIdShouldFindProductWithSpecifiedId() {
+        Product product = new Product();
+        product.setName("ball");
+        product.setId(1L);
+        Product product1 = new Product();
+        product1.setName("glasses");
+        product1.setId(2L);
+        List<ProductDto> productDtos = new ArrayList<>();
+        productDtos.add(product.toDto());
+        productDtos.add(product1.toDto());
+        when(productRepository.findById(1L)).thenReturn(productDtos.stream().filter(productDto -> productDto.getId().equals(1L)).map(ProductDto::toEntity).findFirst());
+        when(productRepository.findById(2L)).thenReturn(productDtos.stream().filter(productDto -> productDto.getId().equals(2L)).map(ProductDto::toEntity).findFirst());
+        doThrow(ResourceNotFoundException.class).when(productRepository).findById(3L);
+        productService.findById("3");
+        assertEquals("ball", productService.findById("1").getName());
+        assertEquals("glasses", productService.findById("2").getName());
+
+        verify(productRepository, times(2)).findById(any(Long.class));
+    }
+
+    @Test
+    public void updateProductShouldChangeProductProperties() {
+        Product product = new Product();
+        product.setName("ball");
+        product.setDescription("bouncy");
+        product.setId(1L);
+        List<ProductDto> productDtos = new ArrayList<>();
+        productDtos.add(product.toDto());
+        when(productRepository.findById(1L)).thenReturn(productDtos.stream().filter(productDto -> productDto.getId().equals(1L)).map(ProductDto::toEntity).findFirst());
+        //when(productRepository.findById(1L)).thenReturn(Optional.of(productDtos.get(0).toEntity()));
+        ProductDto dtoToUpdate = ProductDto.builder().name("not a ball at all").description("flat").build();
+        Product update = productService.update("1", dtoToUpdate);
+        assertEquals("not a ball at all", productRepository.findById(1L).get().getName());
+        assertEquals("flat", productRepository.findById(1L).get().getDescription());
+        assertNotNull(productRepository.findById(1L).get().getDescription());
+        verify(productRepository, atLeastOnce()).findById(any(Long.class));
+    }
+
 
 }

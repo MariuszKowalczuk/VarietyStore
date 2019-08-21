@@ -1,3 +1,93 @@
+GET http://localhost:8080/products/1
+
+<> 2019-08-20T024555.200.json
+
+###
+
+PUT http://localhost:8080/products/1
+Content-Type: application/json
+
+{"price": 12.56,
+  "name": "ball",
+  "description": "not very nice, really"
+}
+
+<> 2019-08-20T024549.200.json
+
+###
+
+GET http://localhost:8080/products/1
+
+<> 2019-08-20T024541.200.json
+
+###
+
+GET http://localhost:8080/products
+
+<> 2019-08-20T024537.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{"price": 12.56,
+  "name": "ball",
+  "description": "very nice"
+}
+
+<> 2019-08-20T024532.200.json
+
+###
+
+GET http://localhost:8080/products/2
+
+<> 2019-08-20T011541.404.json
+
+###
+
+GET http://localhost:8080/products/1
+
+<> 2019-08-20T011532.200.json
+
+###
+
+GET http://localhost:8080/products/2
+
+<> 2019-08-20T011459.404.json
+
+###
+
+GET http://localhost:8080/products/1
+
+<> 2019-08-20T011449.200.json
+
+###
+
+GET http://localhost:8080/products
+
+<> 2019-08-20T011436.200.json
+
+###
+
+GET http://localhost:8080/products
+
+<> 2019-08-20T011422.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{"price": 12.56,
+  "name": "ball",
+  "description": "very nice"
+}
+
+<> 2019-08-20T011416.200.json
+
+###
+
 GET http://localhost:8080/products
 
 <> 2019-08-20T115650.200.json
