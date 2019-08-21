@@ -1,0 +1,38 @@
+{
+  "id": 1,
+  "orderItems": [
+    {
+      "id": 1,
+      "product": {
+        "id": 2,
+        "price": 33.50,
+        "name": "soldier",
+        "description": "fighting",
+        "category": {
+          "id": 1,
+          "description": "toys",
+          "products": []
+        }
+      },
+      "quantity": 3,
+      "order": null
+    },
+    {
+      "id": 2,
+      "product": {
+        "id": 1,
+        "price": 12.50,
+        "name": "ball",
+        "description": "very nice",
+        "category": {
+          "id": 1,
+          "description": "toys",
+          "products": []
+        }
+      },
+      "quantity": 1,
+      "order": null
+    }
+  ],
+  "value": 113.00
+}
