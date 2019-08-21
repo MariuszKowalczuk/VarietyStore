@@ -17,24 +17,28 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @RequestMapping("/products/new")
-    @PostMapping
+    @PostMapping("/products/new")
     public Product createProduct(@RequestBody ProductDto productDto) {
         return productService.create(productDto);
 
     }
 
-    @RequestMapping("/products")
-    @GetMapping
+    @GetMapping("/products")
     public List<ProductDto> showProducts() {
         return productService.findAll();
 
     }
 
-    @RequestMapping("products/{id}")
-    @GetMapping
+    @GetMapping("products/{id}")
     public ProductDto findProductById(@PathVariable String id) {
         return productService.findById(id);
+
+    }
+
+    @PutMapping("products/{id}")
+    public Product updateProduct(@PathVariable String id, @RequestBody ProductDto productDto) {
+        return productService.update(id, productDto);
+
 
     }
 }
