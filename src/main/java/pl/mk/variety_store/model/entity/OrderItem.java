@@ -24,5 +24,5 @@ public class OrderItem {
     private Product product;
     private Integer quantity;
     @ManyToOne
-    private Commission commission;
+    private Order order;
 }

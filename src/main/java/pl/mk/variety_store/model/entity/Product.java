@@ -5,7 +5,6 @@ import pl.mk.variety_store.dto.ProductDto;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Set;
 
 /**
  * @author Mariusz Kowalczuk
@@ -27,8 +26,8 @@ public class Product {
 
     @ManyToOne
     private Category category;
-    @OneToMany(mappedBy = "product")
-    private Set<OrderItem> orderItems;
+//    @OneToMany(mappedBy = "product")
+//    private Set<OrderItem> orderItems;
 
 
     public ProductDto toDto() {

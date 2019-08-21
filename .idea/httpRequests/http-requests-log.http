@@ -1,3 +1,279 @@
+POST http://localhost:8080/orders/new
+Content-Type: application/json
+
+[{
+  "productId": "1",
+  "quantity": "1"
+},
+  {
+    "productId": "2",
+    "quantity": "3"
+  }]
+
+<> 2019-08-22T123431.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 33.50,
+  "name": "soldier",
+  "productDescription": "fighting",
+  "categoryDescription": "toys"
+}
+
+<> 2019-08-22T123425.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.50,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+}
+
+<> 2019-08-22T123421.200.json
+
+###
+
+POST http://localhost:8080/orders/new
+Content-Type: application/json
+
+[{
+  "productId": "1",
+  "quantity": "1"
+},
+  {
+    "productId": "2",
+    "quantity": "3"
+  }]
+
+<> 2019-08-22T122425.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 33.50,
+  "name": "soldier",
+  "productDescription": "fighting",
+  "categoryDescription": "toys"
+}
+
+<> 2019-08-22T122413.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.50,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+}
+
+<> 2019-08-22T122408.200.json
+
+###
+
+POST http://localhost:8080/orders/new
+Content-Type: application/json
+
+[{
+  "productId": "1",
+  "quantity": "1"
+},
+  {
+    "productId": "2",
+    "quantity": "3"
+  }]
+
+<> 2019-08-22T122104.200.json
+
+###
+
+POST http://localhost:8080/orders/new
+Content-Type: application/json
+
+{"orderItems":[{
+  "productId": "1",
+  "quantity": "1"
+},
+  {
+    "productId": "2",
+    "quantity": "3"
+  }]}
+
+<> 2019-08-22T121555.400.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 33.50,
+  "name": "soldier",
+  "productDescription": "fighting",
+  "categoryDescription": "toys"
+}
+
+<> 2019-08-22T121542.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.50,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+}
+
+<> 2019-08-22T121533.200.json
+
+###
+
+POST http://localhost:8080/orders/new
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "productId": "1",
+      "quantity": "1"
+    },
+    {
+      "productId": "2",
+      "quantity": "3"
+    }
+  ]
+}
+
+<> 2019-08-22T120019.400.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 33.50,
+  "name": "soldier",
+  "productDescription": "fighting",
+  "categoryDescription": "toys"
+}
+
+<> 2019-08-21T115947.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.50,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+}
+
+<> 2019-08-21T115943.200.json
+
+###
+
+POST http://localhost:8080/orders/new
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "productId": "1",
+      "quantity": 1
+    },
+    {
+      "productId": "2",
+      "quantity": 3
+    }
+  ]
+}
+
+<> 2019-08-21T115454.400.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.50,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+}
+
+<> 2019-08-21T115133.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.50,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+}
+
+<> 2019-08-21T115128.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.50,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+}
+
+<> 2019-08-21T114850.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.50,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+}
+
+<> 2019-08-21T114847.200.json
+
+###
+
 POST http://localhost:8080/products/new
 Content-Type: application/json
 
@@ -403,142 +679,6 @@ Content-Type: application/json
 }
 
 <> 2019-08-21T083249.200.json
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-21T083111.404.json
-
-###
-
-GET http://localhost:8080/products
-
-<> 2019-08-21T032341.200.json
-
-###
-
-DELETE http://localhost:8080/products/1
-
-###
-
-GET http://localhost:8080/products/1
-
-<> 2019-08-21T032332.200.json
-
-###
-
-PUT http://localhost:8080/products/1
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "not very nice, really"
-}
-
-<> 2019-08-21T032325.200.json
-
-###
-
-GET http://localhost:8080/products/1
-
-<> 2019-08-21T032321.200.json
-
-###
-
-GET http://localhost:8080/products
-
-<> 2019-08-21T032317.200.json
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-21T032312.200.json
-
-###
-
-GET http://localhost:8080/products/1
-
-<> 2019-08-20T024555.200.json
-
-###
-
-PUT http://localhost:8080/products/1
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "not very nice, really"
-}
-
-<> 2019-08-20T024549.200.json
-
-###
-
-GET http://localhost:8080/products/1
-
-<> 2019-08-20T024541.200.json
-
-###
-
-GET http://localhost:8080/products
-
-<> 2019-08-20T024537.200.json
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-20T024532.200.json
-
-###
-
-GET http://localhost:8080/products/2
-
-<> 2019-08-20T011541.404.json
-
-###
-
-GET http://localhost:8080/products/1
-
-<> 2019-08-20T011532.200.json
-
-###
-
-GET http://localhost:8080/products/2
-
-<> 2019-08-20T011459.404.json
-
-###
-
-GET http://localhost:8080/products/1
-
-<> 2019-08-20T011449.200.json
-
-###
-
-GET http://localhost:8080/products
-
-<> 2019-08-20T011436.200.json
 
 ###
 

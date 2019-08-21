@@ -15,12 +15,13 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Commission {
+@Table(name = "orders")
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany(mappedBy = "commission")
+    @OneToMany
     private Set<OrderItem> orderItems;
     private BigDecimal value;
 
