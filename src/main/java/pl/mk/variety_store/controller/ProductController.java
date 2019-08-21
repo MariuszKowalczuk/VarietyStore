@@ -2,6 +2,7 @@ package pl.mk.variety_store.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import pl.mk.variety_store.dto.NewProductDto;
 import pl.mk.variety_store.dto.ProductDto;
 import pl.mk.variety_store.model.entity.Product;
 import pl.mk.variety_store.service.ProductService;
@@ -18,7 +19,7 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping("/products/new")
-    public Product createProduct(@RequestBody ProductDto productDto) {
+    public Product createProduct(@RequestBody NewProductDto productDto) {
         return productService.create(productDto);
 
     }

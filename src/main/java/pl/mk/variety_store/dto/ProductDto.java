@@ -19,6 +19,7 @@ public class ProductDto {
     private BigDecimal price;
     private String name;
     private String description;
+    private String category;
 
     public Product toEntity() {
         return Product.builder().price(price).name(name).description(description).build();

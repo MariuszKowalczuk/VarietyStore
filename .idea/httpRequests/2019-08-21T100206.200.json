@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "category": {
+    "id": 1,
+    "description": "toys",
+    "products": []
+  },
+  "orderItems": null
+}

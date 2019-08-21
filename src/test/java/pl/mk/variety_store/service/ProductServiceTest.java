@@ -5,8 +5,11 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import pl.mk.variety_store.dto.NewProductDto;
 import pl.mk.variety_store.dto.ProductDto;
+import pl.mk.variety_store.model.entity.Category;
 import pl.mk.variety_store.model.entity.Product;
+import pl.mk.variety_store.repository.CategoryRepository;
 import pl.mk.variety_store.repository.ProductRepository;
 
 import java.util.ArrayList;
@@ -24,26 +27,60 @@ public class ProductServiceTest {
 
     @Mock
     ProductRepository productRepository;
+    @Mock
+    CategoryRepository categoryRepository;
 
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        productService = new ProductService(productRepository);
+        productService = new ProductService(productRepository, categoryRepository);
     }
 
     @Test
     public void createProductShouldCreateProduct() {
+        NewProductDto newProductDto = new NewProductDto();
+        newProductDto.setName("ball");
+        newProductDto.setProductDescription("bouncy");
         Product product = new Product();
-        product.setName("ball");
+        product.setName(newProductDto.getName());
+        product.setDescription(newProductDto.getProductDescription());
         List<ProductDto> productDtos = new ArrayList<>();
         ProductDto e = product.toDto();
         productDtos.add(e);
         when(productRepository.save(product)).thenReturn(productDtos.get(0).toEntity());
         when(productRepository.findAll()).thenReturn(productDtos.stream().map(ProductDto::toEntity).collect(Collectors.toList()));
-        Product product1 = productService.create(e);
+        Product product1 = productService.create(newProductDto);
         assertEquals("ball", product1.getName());
-        assertNull(product1.getDescription());
+        assertEquals("bouncy", product1.getDescription());
         verify(productRepository).save(any(Product.class));
+
+    }
+
+    @Test
+    public void creationOfProductShouldCreateACategoryIfItHasntExisted() {
+        NewProductDto newProductDto = new NewProductDto();
+        newProductDto.setName("ball");
+        newProductDto.setCategoryDescription("toys");
+        Product product = new Product();
+        product.setName(newProductDto.getName());
+        product.setDescription(newProductDto.getProductDescription());
+        List<ProductDto> productDtos = new ArrayList<>();
+        ProductDto e = product.toDto();
+        productDtos.add(e);
+        List<Category> categories = new ArrayList<>();
+        Category category = new Category();
+        categories.add(category);
+        category.setDescription(newProductDto.getCategoryDescription());
+        when(productRepository.save(product)).thenReturn(productDtos.get(0).toEntity());
+        when(categoryRepository.save(category)).thenReturn(categories.get(0));
+        when(productRepository.findAll()).thenReturn(productDtos.stream().map(ProductDto::toEntity).collect(Collectors.toList()));
+        when(categoryRepository.findAll()).thenReturn(categories);
+        Product product1 = productService.create(newProductDto);
+        assertEquals("ball", product1.getName());
+        assertEquals(1, productRepository.findAll().size());
+        assertEquals(1, categoryRepository.findAll().size());
+        verify(productRepository).save(any(Product.class));
+        verify(categoryRepository).save(any(Category.class));
 
     }
 
@@ -101,7 +138,7 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void shouldDeleteProductOfSpecifiedIdOrThrowAnException() {
+    public void shouldDeleteProductOfSpecifiedId() {
         String id = "1";
         productService.delete("1");
         verify(productRepository, times(1)).deleteById(eq(Long.valueOf(id)));
