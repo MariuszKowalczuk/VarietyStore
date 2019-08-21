@@ -46,4 +46,9 @@ public class ProductService {
         return product;
 
     }
+
+    public boolean delete(String id) {
+        productRepository.deleteById(Long.valueOf(id));
+        return true;
+    }
 }

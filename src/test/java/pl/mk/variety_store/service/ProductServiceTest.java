@@ -92,13 +92,21 @@ public class ProductServiceTest {
         List<ProductDto> productDtos = new ArrayList<>();
         productDtos.add(product.toDto());
         when(productRepository.findById(1L)).thenReturn(productDtos.stream().filter(productDto -> productDto.getId().equals(1L)).map(ProductDto::toEntity).findFirst());
-        //when(productRepository.findById(1L)).thenReturn(Optional.of(productDtos.get(0).toEntity()));
         ProductDto dtoToUpdate = ProductDto.builder().name("not a ball at all").description("flat").build();
         Product update = productService.update("1", dtoToUpdate);
         assertEquals("not a ball at all", productRepository.findById(1L).get().getName());
         assertEquals("flat", productRepository.findById(1L).get().getDescription());
         assertNotNull(productRepository.findById(1L).get().getDescription());
         verify(productRepository, atLeastOnce()).findById(any(Long.class));
+    }
+
+    @Test
+    public void shouldDeleteProductOfSpecifiedIdOrThrowAnException() {
+        String id = "1";
+        productService.delete("1");
+        verify(productRepository, times(1)).deleteById(eq(Long.valueOf(id)));
+
+
     }
 
 
