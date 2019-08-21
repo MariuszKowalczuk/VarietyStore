@@ -1,3 +1,369 @@
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+
+<> 2019-08-21T100206.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+
+<> 2019-08-21T100203.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+
+<> 2019-08-21T095703.500.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+
+<> 2019-08-21T095504.500.json
+
+###
+
+DELETE http://localhost:8080/products/1
+
+###
+
+PUT http://localhost:8080/products/1
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "not very nice, really"
+}
+
+<> 2019-08-21T094707.200.json
+
+###
+
+GET http://localhost:8080/products/1
+
+<> 2019-08-21T094645.200.json
+
+###
+
+GET http://localhost:8080/products
+
+<> 2019-08-21T094638.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+
+<> 2019-08-21T094633.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+
+<> 2019-08-21T094623.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+
+<> 2019-08-21T094617.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+}
+
+<> 2019-08-21T094409.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+}
+
+<> 2019-08-21T094401.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+}
+
+<> 2019-08-21T093138.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "productDescription": "very nice",
+  "categoryDescription": "toys"
+
+  }
+}
+
+<> 2019-08-21T093124.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "categoryDto": {
+       "description": "toys"
+  }
+}
+
+<> 2019-08-21T092825.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "categoryDto": {
+       "description": "toys"
+  }
+}
+
+<> 2019-08-21T091632.500.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "categoryDto": {
+    "id": 1,
+    "description": "toys"
+  }
+}
+
+<> 2019-08-21T091610.500.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "categoryDto": {
+    "id": 1,
+    "description": "toys"
+  }
+}
+
+<> 2019-08-21T091313.500.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "categoryDto": {
+    "id": 1,
+    "description": "toys"
+  }
+}
+
+<> 2019-08-21T091043.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "categoryDto": {
+    "id": 1,
+    "description": "toys"
+  }
+}
+
+<> 2019-08-21T090516.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "categoryDto": {
+    "id": 1,
+    "description": "toys"
+  }
+}
+
+<> 2019-08-21T090257.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{
+  "price": 12.56,
+  "name": "ball",
+  "description": "very nice",
+  "categoryDto": {
+    "id": 1,
+    "description": "toys"
+  }
+}
+
+<> 2019-08-21T090230.200.json
+
+###
+
+GET http://localhost:8080/products
+
+<> 2019-08-21T085953.200.json
+
+###
+
+DELETE http://localhost:8080/products/1
+
+###
+
+GET http://localhost:8080/products/1
+
+<> 2019-08-21T085939.200.json
+
+###
+
+GET http://localhost:8080/products
+
+<> 2019-08-21T085924.200.json
+
+###
+
+POST http://localhost:8080/products/new
+Content-Type: application/json
+
+{"price": 12.56,
+  "name": "ball",
+  "description": "very nice"
+}
+
+<> 2019-08-21T085919.200.json
+
+###
+
 PUT http://localhost:8080/products/1
 Content-Type: application/json
 
@@ -173,116 +539,6 @@ GET http://localhost:8080/products/1
 GET http://localhost:8080/products
 
 <> 2019-08-20T011436.200.json
-
-###
-
-GET http://localhost:8080/products
-
-<> 2019-08-20T011422.200.json
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-20T011416.200.json
-
-###
-
-GET http://localhost:8080/products
-
-<> 2019-08-20T115650.200.json
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-20T115644.200.json
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-20T110121.200.json
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-20T103624.200.json
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-###
-
-POST http://localhost:8080/products/new
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-19T053421.200.json
-
-###
-
-POST http://localhost:8080/products/create
-Content-Type: application/json
-
-{"price": 12.56,
-  "name": "ball",
-  "description": "very nice"
-}
-
-<> 2019-08-19T053350.404.json
-
-###
-
-GET http://localhost:8080/resources
-Accept: */*
-Cache-Control: no-cache
 
 ###
 

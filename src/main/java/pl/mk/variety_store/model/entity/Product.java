@@ -25,12 +25,13 @@ public class Product {
     private String name;
     private String description;
 
-
+    @ManyToOne
+    private Category category;
     @OneToMany(mappedBy = "product")
     private Set<OrderItem> orderItems;
 
 
     public ProductDto toDto() {
-        return ProductDto.builder().id(id).price(price).name(name).description(description).build();
+        return ProductDto.builder().id(id).price(price).name(name).description(description).category(category != null ? category.getDescription() : null).build();
     }
 }
