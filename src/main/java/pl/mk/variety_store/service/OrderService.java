@@ -12,7 +12,6 @@ import pl.mk.variety_store.repository.ProductRepository;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -25,7 +24,7 @@ public class OrderService {
     private final OrderItemRepository orderItemRepository;
     private final ProductRepository productRepository;
 
-    public Order create(List<OrderItemDto> orderItems) {
+    public Order create(Set<OrderItemDto> orderItems) {
         Set<OrderItem> itemsToAdd = new HashSet<>();
         for (OrderItemDto orderItem : orderItems) {
             Product product = productRepository.findById(Long.valueOf(orderItem.getProductId())).orElseThrow(IllegalArgumentException::new);
@@ -42,7 +41,7 @@ public class OrderService {
 
     }
 
-    private BigDecimal computeValue(Set<OrderItem> orderItems) {
+    protected BigDecimal computeValue(Set<OrderItem> orderItems) {
         BigDecimal result = BigDecimal.ZERO;
         for (OrderItem orderItem : orderItems) {
             Integer quantity = orderItem.getQuantity();
