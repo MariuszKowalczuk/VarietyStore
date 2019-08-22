@@ -8,7 +8,7 @@ import pl.mk.variety_store.dto.OrderItemDto;
 import pl.mk.variety_store.model.entity.Order;
 import pl.mk.variety_store.service.OrderService;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * @author Mariusz Kowalczuk
@@ -19,7 +19,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping("orders/new")
-    public Order createOrder(@RequestBody List<OrderItemDto> orderItems) {
+    public Order createOrder(@RequestBody Set<OrderItemDto> orderItems) {
         return orderService.create(orderItems);
     }
 }

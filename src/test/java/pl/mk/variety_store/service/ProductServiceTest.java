@@ -48,7 +48,6 @@ public class ProductServiceTest {
         ProductDto e = product.toDto();
         productDtos.add(e);
         when(productRepository.save(product)).thenReturn(productDtos.get(0).toEntity());
-        when(productRepository.findAll()).thenReturn(productDtos.stream().map(ProductDto::toEntity).collect(Collectors.toList()));
         Product product1 = productService.create(newProductDto);
         assertEquals("ball", product1.getName());
         assertEquals("bouncy", product1.getDescription());
@@ -63,7 +62,7 @@ public class ProductServiceTest {
         newProductDto.setCategoryDescription("toys");
         Product product = new Product();
         product.setName(newProductDto.getName());
-        product.setDescription(newProductDto.getProductDescription());
+        product.setCategory(Category.builder().description(newProductDto.getCategoryDescription()).build());
         List<ProductDto> productDtos = new ArrayList<>();
         ProductDto e = product.toDto();
         productDtos.add(e);
@@ -81,7 +80,42 @@ public class ProductServiceTest {
         assertEquals(1, categoryRepository.findAll().size());
         verify(productRepository).save(any(Product.class));
         verify(categoryRepository).save(any(Category.class));
+    }
 
+    @Test
+    public void creationOfProductShouldNotCreateACategoryIfItHasExisted() {
+        NewProductDto newProductDto = new NewProductDto();
+        newProductDto.setName("ball");
+        newProductDto.setCategoryDescription("toys");
+        NewProductDto newProductDto2 = new NewProductDto();
+        newProductDto2.setName("robot");
+        newProductDto2.setCategoryDescription("toys");
+        Product product = new Product();
+        Product product2 = new Product();
+        product.setName(newProductDto.getName());
+        product.setCategory(Category.builder().description(newProductDto.getCategoryDescription()).build());
+        product2.setName(newProductDto2.getName());
+        product2.setCategory(Category.builder().description(newProductDto2.getCategoryDescription()).build());
+        List<ProductDto> productDtos = new ArrayList<>();
+        ProductDto productDto = product.toDto();
+        productDtos.add(productDto);
+        ProductDto productDto2 = product2.toDto();
+        productDtos.add(productDto2);
+        List<Category> categories = new ArrayList<>();
+        Category category = new Category();
+        categories.add(category);
+        category.setDescription(newProductDto.getCategoryDescription());
+        when(productRepository.save(product)).thenReturn(productDtos.get(0).toEntity());
+        when(productRepository.save(product2)).thenReturn(productDtos.get(1).toEntity());
+        when(categoryRepository.save(category)).thenReturn(categories.get(0));
+        when(productRepository.findAll()).thenReturn(productDtos.stream().map(ProductDto::toEntity).collect(Collectors.toList()));
+        when(categoryRepository.findAll()).thenReturn(categories);
+        Product product1 = productService.create(newProductDto);
+        assertEquals("ball", product1.getName());
+        assertEquals(2, productRepository.findAll().size());
+        assertEquals(1, categoryRepository.findAll().size());
+        verify(productRepository).save(any(Product.class));
+        verify(categoryRepository, times(1)).save(any(Category.class));
     }
 
     @Test
