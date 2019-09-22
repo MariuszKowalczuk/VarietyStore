@@ -23,6 +23,5 @@ public class OrderItem {
     @ManyToOne
     private Product product;
     private Integer quantity;
-    @ManyToOne
-    private Order order;
+
 }

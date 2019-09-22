@@ -18,7 +18,7 @@ import java.util.Set;
 public class OrderController {
     private final OrderService orderService;
 
-    @PostMapping("orders/new")
+    @PostMapping("orders")
     public Order createOrder(@RequestBody Set<OrderItemDto> orderItems) {
         return orderService.create(orderItems);
     }
